@@ -87,7 +87,7 @@ export default function AiAgentOpsPage() {
   ];
 
   return (
-    <div className="p-6 space-y-6 animate-fade-in">
+    <div className="p-6 space-y-6 animate-fade-in py-0">
       {/* 当日概览 */}
       <div className="grid grid-cols-6 gap-4">
         <StatCard icon={<Activity className="w-4 h-4" />} label="当日任务总量" value={todayTotal} suffix="个" color="#6366f1" />

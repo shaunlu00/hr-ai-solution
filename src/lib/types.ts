@@ -4,11 +4,14 @@
 
 /** 招聘流程阶段 */
 export type PipelineStage =
+  | 'talent-insights'   // 人才战略雷达
   | 'job-posting'       // 岗位发布
   | 'resume-screening'  // 简历筛选
   | 'interview-scheduling' // 自动约面
-  | 'ai-interview'      // AI面试
-  | 'second-interview'  // 二轮面试
+  | 'interviewer-assignment' // 面试官分配
+  | 'interviewer'       // 面试官端
+  | 'candidate'         // 候选人端
+  | 'interview-calendar' // 面试日历
   | 'grading'           // 候选人定级
   | 'salary'            // 候选人定薪
   | 'approval'          // 入职审批

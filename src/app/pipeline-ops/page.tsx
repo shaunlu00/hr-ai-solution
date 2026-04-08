@@ -104,7 +104,7 @@ export default function PipelineOpsPage() {
   };
 
   return (
-    <div className="p-6 space-y-6 animate-fade-in">
+    <div className="p-6 space-y-6 animate-fade-in py-0">
       {/* 图例与总统计 */}
       <div className="grid grid-cols-4 gap-4">
         {(Object.entries(METHOD_CONFIG) as [CompletionMethod, typeof METHOD_CONFIG[CompletionMethod]][]).map(([key, cfg]) => {

@@ -6,11 +6,11 @@ import {
   Megaphone, FileSearch, CalendarClock, Bot, Users, Award,
   DollarSign, ClipboardCheck, Send, ShieldCheck, Heart,
   UserCheck, Target, GraduationCap, ArrowRight, Sparkles,
-  Zap, Clock, TrendingUp, ChevronDown, ChevronUp,
+  Zap, Clock, TrendingUp, ChevronDown, ChevronUp, Radar,
 } from 'lucide-react';
 
 const iconMap: Record<string, React.ComponentType<React.SVGProps<SVGSVGElement>>> = {
-  Megaphone, FileSearch, CalendarClock, Bot, Users, Award,
+  Radar, Megaphone, FileSearch, CalendarClock, Bot, Users, Award,
   DollarSign, ClipboardCheck, Send, ShieldCheck, Heart,
   UserCheck, Target, GraduationCap,
 };
@@ -37,8 +37,8 @@ const STAGE_COLLABORATION: {
     hrTasks: ['确认岗位需求与HC', '审核AI生成的JD内容', '确认发布渠道与预算'],
     collaborationMode: 'ai-driven',
     modeLabel: 'AI主导',
-    efficiencyGain: '生成JD从2小时缩短至5分钟',
-    qualityGain: '简历匹配精准度提升18%',
+    efficiencyGain: 'JD生成效率 ↑↑',
+    qualityGain: '简历匹配精准度 ↑',
     workflow: [
       { actor: 'hr', action: '提出招聘需求' },
       { actor: 'ai', action: '智能生成结构化JD' },
@@ -55,8 +55,8 @@ const STAGE_COLLABORATION: {
     hrTasks: ['复核AI筛选结果', '对边界候选人做最终判断', '标记特殊需求'],
     collaborationMode: 'ai-driven',
     modeLabel: 'AI主导',
-    efficiencyGain: '筛选500份简历从3天缩短至30分钟',
-    qualityGain: '优质候选人漏筛率降低65%',
+    efficiencyGain: '简历筛选效率 ↑↑↑',
+    qualityGain: '漏筛率 ↓↓',
     workflow: [
       { actor: 'ai', action: '批量解析和评分' },
       { actor: 'ai', action: '生成推荐/待定/不推荐分组' },
@@ -73,8 +73,8 @@ const STAGE_COLLABORATION: {
     hrTasks: ['处理候选人特殊需求', '协调VIP候选人面试', '确认线下面试安排'],
     collaborationMode: 'ai-driven',
     modeLabel: 'AI主导',
-    efficiencyGain: '约面耗时从2小时/人缩短至2分钟/人',
-    qualityGain: '候选人体验满意度提升40%',
+    efficiencyGain: '约面耗时 ↓↓↓',
+    qualityGain: '候选人满意度 ↑↑',
     workflow: [
       { actor: 'ai', action: '分析日历空闲时段' },
       { actor: 'ai', action: '推荐最优面试时间' },
@@ -91,8 +91,8 @@ const STAGE_COLLABORATION: {
     hrTasks: ['设定面试题目框架', '审阅AI面试报告', '对AI评分进行校准'],
     collaborationMode: 'ai-driven',
     modeLabel: 'AI主导',
-    efficiencyGain: '初面产能从4人/天提升至无限并发',
-    qualityGain: '面试评价一致性提升90%',
+    efficiencyGain: '面试产能 ↑↑↑（无限并发）',
+    qualityGain: '评价一致性 ↑↑↑',
     workflow: [
       { actor: 'hr', action: '配置面试题库与权重' },
       { actor: 'ai', action: '实施结构化面试' },
@@ -110,8 +110,8 @@ const STAGE_COLLABORATION: {
     hrTasks: ['主导面试流程', '深度评估软技能', '判断团队匹配度', '做出面试决策'],
     collaborationMode: 'human-driven',
     modeLabel: '人工主导',
-    efficiencyGain: '面试准备时间缩短70%',
-    qualityGain: '面试决策有据可依，减少直觉判断',
+    efficiencyGain: '面试准备时间 ↓↓',
+    qualityGain: '决策科学性 ↑',
     workflow: [
       { actor: 'ai', action: '生成候选人画像报告' },
       { actor: 'ai', action: '推荐面试关注点' },
@@ -128,8 +128,8 @@ const STAGE_COLLABORATION: {
     hrTasks: ['审核AI定级建议', '结合团队需求调整', '确认最终级别'],
     collaborationMode: 'ai-assisted',
     modeLabel: 'AI辅助',
-    efficiencyGain: '定级决策时间从1天缩短至10分钟',
-    qualityGain: '定级准确度提升35%，内部公平性增强',
+    efficiencyGain: '定级决策耗时 ↓↓↓',
+    qualityGain: '定级准确度 ↑↑',
     workflow: [
       { actor: 'ai', action: '综合能力评估' },
       { actor: 'ai', action: '历史对标匹配' },
@@ -146,8 +146,8 @@ const STAGE_COLLABORATION: {
     hrTasks: ['审核AI薪资建议', '考虑特殊因素调整', '确认薪资方案'],
     collaborationMode: 'ai-assisted',
     modeLabel: 'AI辅助',
-    efficiencyGain: '薪酬测算从半天缩短至5分钟',
-    qualityGain: '薪资竞争力评估准确率92%',
+    efficiencyGain: '薪酬测算耗时 ↓↓↓',
+    qualityGain: '薪资竞争力评估准确度 ↑↑',
     workflow: [
       { actor: 'ai', action: '获取市场薪酬数据' },
       { actor: 'ai', action: '分析内部薪酬结构' },
@@ -164,8 +164,8 @@ const STAGE_COLLABORATION: {
     hrTasks: ['审阅AI汇总报告', '执行审批决策', '处理异常审批'],
     collaborationMode: 'ai-assisted',
     modeLabel: 'AI辅助',
-    efficiencyGain: '审批材料准备时间缩短80%',
-    qualityGain: '审批信息完整性100%，减少退回率',
+    efficiencyGain: '审批材料准备耗时 ↓↓↓',
+    qualityGain: '信息完整性 ↑↑↑，退回率 ↓',
     workflow: [
       { actor: 'ai', action: '汇总全流程数据' },
       { actor: 'ai', action: '生成审批摘要' },
@@ -182,8 +182,8 @@ const STAGE_COLLABORATION: {
     hrTasks: ['审核Offer内容', '确认薪酬福利', '与候选人沟通', '处理谈判'],
     collaborationMode: 'ai-assisted',
     modeLabel: 'AI辅助',
-    efficiencyGain: 'Offer生成从2小时缩短至3分钟',
-    qualityGain: 'Offer接受率提升22%',
+    efficiencyGain: 'Offer生成效率 ↑↑↑',
+    qualityGain: 'Offer接受率 ↑↑',
     workflow: [
       { actor: 'ai', action: '生成个性化Offer' },
       { actor: 'ai', action: '预测入职概率' },
@@ -200,8 +200,8 @@ const STAGE_COLLABORATION: {
     hrTasks: ['处理异常背调结果', '联系前雇主确认', '做出风险决策'],
     collaborationMode: 'ai-driven',
     modeLabel: 'AI主导',
-    efficiencyGain: '背调周期从5天缩短至1天',
-    qualityGain: '背调覆盖率从60%提升至100%',
+    efficiencyGain: '背调周期 ↓↓↓',
+    qualityGain: '背调覆盖率 ↑↑↑',
     workflow: [
       { actor: 'ai', action: '自动发起各项核查' },
       { actor: 'ai', action: '学历/信用/犯罪记录验证' },
@@ -218,8 +218,8 @@ const STAGE_COLLABORATION: {
     hrTasks: ['制定保温策略', '重点候选人人工维护', '确认再次触达时机'],
     collaborationMode: 'ai-driven',
     modeLabel: 'AI主导',
-    efficiencyGain: '人才库激活率提升150%',
-    qualityGain: '高潜力候选人触达及时性提升80%',
+    efficiencyGain: '人才库激活率 ↑↑↑',
+    qualityGain: '高潜候选人触达及时性 ↑↑',
     workflow: [
       { actor: 'ai', action: '持续监测跳槽意向' },
       { actor: 'ai', action: '智能匹配新岗位' },
@@ -236,8 +236,8 @@ const STAGE_COLLABORATION: {
     hrTasks: ['签署劳动合同', '安排Buddy', '确认入职体验', '处理特殊需求'],
     collaborationMode: 'ai-driven',
     modeLabel: 'AI主导',
-    efficiencyGain: '入职准备从3天缩短至10分钟',
-    qualityGain: '新员工首日体验满意度98%',
+    efficiencyGain: '入职准备耗时 ↓↓↓',
+    qualityGain: '首日体验满意度 ↑↑↑',
     workflow: [
       { actor: 'ai', action: '自动创建账号与申请设备' },
       { actor: 'ai', action: '生成入职文件与培训安排' },
@@ -254,8 +254,8 @@ const STAGE_COLLABORATION: {
     hrTasks: ['制定培养计划', '定期面谈辅导', '收集360度反馈', '做出转正决策'],
     collaborationMode: 'ai-assisted',
     modeLabel: 'AI辅助',
-    efficiencyGain: '试用期评估工作量减少60%',
-    qualityGain: '试用期淘汰精准度提升45%',
+    efficiencyGain: '评估工作量 ↓↓',
+    qualityGain: '淘汰精准度 ↑↑',
     workflow: [
       { actor: 'ai', action: '设定量化考核目标' },
       { actor: 'ai', action: '持续追踪与评估' },
@@ -272,8 +272,8 @@ const STAGE_COLLABORATION: {
     hrTasks: ['管理课程资源', '组织线下培训', '评估培训效果', '优化培训体系'],
     collaborationMode: 'ai-driven',
     modeLabel: 'AI主导',
-    efficiencyGain: '课程匹配准确率95%',
-    qualityGain: '新员工上手速度提升40%',
+    efficiencyGain: '课程匹配准确率 ↑↑↑',
+    qualityGain: '新员工上手速度 ↑↑',
     workflow: [
       { actor: 'ai', action: '分析能力画像' },
       { actor: 'ai', action: '生成个性化学习路径' },
@@ -300,7 +300,7 @@ export default function AiCollaborationPage() {
   };
 
   return (
-    <div className="p-6 space-y-8 animate-fade-in">
+    <div className="p-6 space-y-6 animate-fade-in py-0">
       {/* 页面标题区 */}
       <div className="text-center max-w-3xl mx-auto">
         <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-accent/10 text-accent text-sm font-medium mb-4">
@@ -311,7 +311,7 @@ export default function AiCollaborationPage() {
           AI × HR：智能协作，提质增效
         </h1>
         <p className="text-sm text-muted leading-relaxed">
-          覆盖招聘全流程 14 个环节，AI智能体与HR紧密协作。AI负责数据处理、模式识别和自动化执行，
+          覆盖招聘全流程 15 个环节，AI智能体与HR紧密协作。AI负责数据处理、模式识别和自动化执行，
           HR聚焦决策判断、关系维护和人性化服务，实现 <span className="font-semibold text-accent">「AI提效 + 人工提质」</span> 的最佳协同范式。
         </p>
       </div>

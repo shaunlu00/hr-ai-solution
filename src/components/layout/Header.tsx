@@ -8,11 +8,13 @@ export default function Header() {
   const pathname = usePathname();
 
   const getPageTitle = () => {
-    if (pathname === '/') return { title: '招聘总览', desc: '实时掌握招聘全流程状态' };
+    if (pathname === '/') return { title: '方案汇报Slides', desc: '14页方案Slides · 支持全屏演示和键盘导航' };
     if (pathname === '/pipeline-ops') return { title: '招聘全流程运营看板', desc: '人机协作全景矩阵 · 每个环节的推进方式一目了然' };
     if (pathname === '/ai-agent-ops') return { title: 'AI智能体运营看板', desc: '智能体工作状态、准确率、效能与成本全览' };
-    if (pathname === '/ai-collaboration') return { title: 'AI×HR 协作图谱', desc: '全流程14个环节人机协作模式 · 提质增效全景图' };
-    if (pathname === '/slides') return { title: 'AI人才引进方案 · 汇报演示', desc: '13页方案Slides · 支持全屏演示和键盘导航' };
+    if (pathname === '/ai-collaboration') return { title: 'AI×HR 协作图谱', desc: '全流程15个环节人机协作模式 · 提质增效全景图' };
+    if (pathname === '/slides') return { title: 'AI方案 · 汇报演示', desc: 'AI HR整体方案' };
+    if (pathname === '/talent-insights') return { title: '人才趋势分析', desc: 'AI智能体实时采集分析竞争对手JD · 洞察行业人才战略转移' };
+    if (pathname === '/talent-map') return { title: '人才地图', desc: '猎头AI智能体 · 挖掘行业顶尖人才 · 构建目标人才库' };
     const stage = PIPELINE_STAGES.find(s => `/${s.key}` === pathname);
     if (stage) return { title: stage.label, desc: stage.description };
     return { title: 'AI人才引进', desc: '智能招聘管理平台' };

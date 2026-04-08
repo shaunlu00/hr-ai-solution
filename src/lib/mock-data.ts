@@ -193,7 +193,7 @@ export const mockInterviews: InterviewRecord[] = [
 // ============================================================
 export const mockGradingResults: GradingResult[] = [
   {
-    candidateId: 'c-002', aiSuggestedLevel: 'P7', aiConfidence: 88, status: 'pending',
+    candidateId: 'c-002', aiSuggestedLevel: 'VP2', aiConfidence: 88, status: 'pending',
     factors: [
       { name: '学历背景', weight: 20, score: 95, detail: '清华硕士，AI专业，有顶会论文' },
       { name: '工作经验', weight: 30, score: 82, detail: '3年算法经验，百度核心团队' },
@@ -201,9 +201,9 @@ export const mockGradingResults: GradingResult[] = [
       { name: '项目成果', weight: 20, score: 88, detail: '主导过模型优化项目，效果提升显著' },
     ],
     historicalComparison: [
-      { name: '候选人A', level: 'P7', education: '清华硕士', experience: 4, similarity: 92 },
-      { name: '候选人B', level: 'P6', education: '北大硕士', experience: 3, similarity: 85 },
-      { name: '候选人C', level: 'P7', education: '中科院博士', experience: 2, similarity: 78 },
+      { name: '候选人A', level: 'VP1', education: '清华硕士', experience: 4, similarity: 92 },
+      { name: '候选人B', level: 'VP2', education: '北大硕士', experience: 3, similarity: 85 },
+      { name: '候选人C', level: 'VP3', education: '中科院博士', experience: 2, similarity: 78 },
     ],
   },
 ];
@@ -213,7 +213,7 @@ export const mockGradingResults: GradingResult[] = [
 // ============================================================
 export const mockSalaryResults: SalaryResult[] = [
   {
-    candidateId: 'c-003', level: 'P7', salaryMin: 42000, salaryMax: 52000, aiRecommended: 47000,
+    candidateId: 'c-003', level: 'VP2', salaryMin: 42000, salaryMax: 52000, aiRecommended: 47000,
     marketP25: 38000, marketP50: 45000, marketP75: 55000, internalAvg: 44000,
     factors: [
       { name: '工作经验', impact: 'positive', detail: '8年前端经验，行业资深', adjustment: 5 },
@@ -298,6 +298,7 @@ export const mockCourses: CourseRecommendation[] = [
 // 看板统计
 // ============================================================
 export const pipelineStats = {
+  'talent-insights': { count: 0, label: '战略洞察' },
   'job-posting': { count: 3, label: '在招岗位' },
   'resume-screening': { count: 42, label: '待筛选' },
   'interview-scheduling': { count: 8, label: '待约面' },
