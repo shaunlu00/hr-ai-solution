@@ -50,17 +50,17 @@ const MENU_CATEGORIES: MenuCategory[] = [
       { key: 'talent-map', label: '人才地图', icon: <Map className="w-3.5 h-3.5" />, href: '/talent-map' },
     ],
   },
-  {
-    id: 'ops-dashboard',
-    label: '运营看板',
-    items: [
-      { key: 'pipeline-ops', label: '全流程运营看板', icon: <Kanban className="w-3.5 h-3.5" />, href: '/pipeline-ops' },
-      { key: 'ai-agent-ops', label: 'AI智能体运营看板', icon: <BrainCircuit className="w-3.5 h-3.5" />, href: '/ai-agent-ops' },
-      { key: 'ai-collaboration', label: 'AI×HR协作图谱', icon: <Handshake className="w-3.5 h-3.5" />, href: '/ai-collaboration' },
-    ],
-  },
-
 ];
+
+const OPS_DASHBOARD_CATEGORY: MenuCategory = {
+  id: 'ops-dashboard',
+  label: '运营看板',
+  items: [
+    { key: 'pipeline-ops', label: '全流程运营看板', icon: <Kanban className="w-3.5 h-3.5" />, href: '/pipeline-ops' },
+    { key: 'ai-agent-ops', label: 'AI智能体运营看板', icon: <BrainCircuit className="w-3.5 h-3.5" />, href: '/ai-agent-ops' },
+    { key: 'ai-collaboration', label: 'AI×HR协作图谱', icon: <Handshake className="w-3.5 h-3.5" />, href: '/ai-collaboration' },
+  ],
+};
 
 export default function Sidebar() {
   const pathname = usePathname();
@@ -206,6 +206,42 @@ export default function Sidebar() {
                       </div>
                     )}
                   </div>
+                );
+              })}
+            </nav>
+          )}
+        </div>
+
+        {/* 运营看板 */}
+        <div className="px-3 mb-1">
+          <button
+            onClick={() => toggleCategory(OPS_DASHBOARD_CATEGORY.id)}
+            className="w-full flex items-center justify-between px-3 py-2 text-[11px] font-semibold text-slate-300 tracking-wide hover:text-white transition"
+          >
+            <span>{OPS_DASHBOARD_CATEGORY.label}</span>
+            <ChevronDown className={`w-3.5 h-3.5 transition-transform ${openCategories[OPS_DASHBOARD_CATEGORY.id] ? '' : '-rotate-90'}`} />
+          </button>
+          {openCategories[OPS_DASHBOARD_CATEGORY.id] && (
+            <nav className="space-y-0.5 mt-0.5">
+              {OPS_DASHBOARD_CATEGORY.items.map(item => {
+                const isActive = pathname === item.href;
+                return (
+                  <Link
+                    key={item.key}
+                    href={item.href}
+                    className={`flex items-center gap-2.5 px-3 py-2 rounded-lg text-[13px] transition-all group ${
+                      isActive
+                        ? 'bg-sidebar-active text-white font-medium'
+                        : 'hover:bg-white/8 text-slate-300 hover:text-white'
+                    }`}
+                  >
+                    <span className={`w-5 h-5 rounded flex items-center justify-center shrink-0 ${
+                      isActive ? 'bg-white/20 text-white' : 'bg-white/8 group-hover:bg-white/15'
+                    }`}>
+                      {item.icon}
+                    </span>
+                    <span className="truncate">{item.label}</span>
+                  </Link>
                 );
               })}
             </nav>
