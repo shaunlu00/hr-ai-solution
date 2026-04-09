@@ -8,6 +8,8 @@ export type PipelineStage =
   | 'job-posting'       // 岗位发布
   | 'resume-screening'  // 简历筛选
   | 'interview-scheduling' // 自动约面
+  | 'ai-interview'      // AI面试
+  | 'second-interview'  // 二面
   | 'interviewer-assignment' // 面试官分配
   | 'interviewer'       // 面试官端
   | 'candidate'         // 候选人端

@@ -63,14 +63,20 @@ function tagCls(level: string) {
 
 function recommendInterviewer(row: Row): Interviewer | null {
   const demand = new Set(tokenize(row.job.jd + ' ' + row.job.name + ' ' + row.candidate.skills.join(' ')));
-  let best: { iv: Interviewer; score: number } | null = null;
+  let bestIv: Interviewer | null = null;
+  let bestScore = Number.NEGATIVE_INFINITY;
+
   INTERVIEWERS.forEach(iv => {
     const exp = new Set(tokenize(iv.expertise));
     let hit = 0; demand.forEach(t => { if (exp.has(t)) hit++; });
     const s = 65 + Math.min(40, hit * 10) - iv.weekPending * 5 - iv.weekInterviewed * 2;
-    if (!best || s > best.score) best = { iv, score: s };
+    if (s > bestScore) {
+      bestIv = iv;
+      bestScore = s;
+    }
   });
-  return best?.iv ?? null;
+
+  return bestIv;
 }
 
 /* ─── 面试官多选 Picker ─── */
