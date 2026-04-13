@@ -2137,7 +2137,7 @@ function SlideSummary() {
         <div className="max-w-2xl text-center mb-8">
           <div className="inline-block px-6 py-3 rounded-2xl bg-white/10 backdrop-blur-sm border border-white/20">
             <p className="text-lg text-white font-medium leading-relaxed">
-              AI不是替代HR，而是成为HR最强大的<span className="font-bold text-yellow-300">智能助手</span>
+              AI不是替代HR，而是成为HR最强大的<span className="font-bold text-yellow-300">智能伙伴</span>
             </p>
             <p className="text-sm text-white/70 mt-1">
               AI承担重复性、数据密集型工作 → HR回归人才判断、关系维护和战略决策
