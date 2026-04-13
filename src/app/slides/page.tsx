@@ -171,7 +171,7 @@ export default function SlidesPage() {
           <div className="mt-4 flex gap-2 overflow-x-auto pb-2">
             {[
               '封面', '方案概述', '人才战略雷达', '人才趋势分析', '战略洞察', '人才画像', 'AI战略建议', '人才地图',
-              'AI招聘全流程', 'AI HR协作模式', '岗位发布与筛选', '约面与面试', '定级与定薪', '培养与培训', '总结与展望',
+              'AI招聘全流程', 'AI HR协作模式', '岗位发布与筛选', '约面与面试', '定级与定薪', 'AI员工赋能', '总结与展望',
             ].map((label, i) => (
               <button key={i} onClick={() => setCurrent(i)}
                 className={`shrink-0 px-3 py-1.5 rounded-lg text-[11px] font-medium transition-all ${
@@ -255,17 +255,11 @@ function SlideCover() {
 
         {/* 标题 */}
         <h1 className="text-5xl font-bold text-white mb-4 tracking-tight">
-          AI 赋能 HR 解决方案
+          人力资源 AI 赋能解决方案
         </h1>
-        <p className="text-xl text-white/80 mb-2">
-          战略支撑 + 招聘提质增效 · 双轮驱动
-        </p>
-        <p className="text-sm text-white/50 mb-12">
-          Part I · AI赋能HR战略决策　｜　Part II · AI赋能招聘全流程提质增效
-        </p>
-
-        {/* 两大板块 */}
-        <div className="flex items-center gap-6">
+        
+        {/* 三大板块 */}
+        <div className="flex items-center gap-6 mt-10">
           <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl px-8 py-5 text-center">
             <div className="flex items-center justify-center gap-2 mb-2 text-white/70">
               <Radar className="w-5 h-5" />
@@ -282,6 +276,15 @@ function SlideCover() {
             </div>
             <p className="text-xl font-bold text-white">AI 招聘提质增效</p>
             <p className="text-xs text-white/60 mt-1">14阶段全流程 · AI×HR协作</p>
+          </div>
+          <div className="text-white/40 text-2xl font-light">+</div>
+          <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl px-8 py-5 text-center">
+            <div className="flex items-center justify-center gap-2 mb-2 text-white/70">
+              <HandshakeIcon className="w-5 h-5"/>
+              <span className="text-xs font-medium">Part III</span>
+            </div>
+            <p className="text-xl font-bold text-white">AI 员工赋能</p>
+            <p className="text-xs text-white/60 mt-1">新员工融入 · 人才培养</p>
           </div>
         </div>
       </div>
@@ -300,7 +303,7 @@ function SlideCover() {
 function SlideSolutionOverview() {
   return (
     <div className="h-screen-100vh px-10 py-20 flex flex-col">
-      <SlideTitle sub="AI赋能HR两大核心场景：战略支撑 + 招聘提质增效">🎯 方案概述</SlideTitle>
+      <SlideTitle sub="AI赋能HR三大核心场景：战略支撑 + 招聘提质增效 + 新员工融入培养">🎯 方案概述</SlideTitle>
 
       <div className="flex-1 flex gap-6">
         {/* Part I：AI战略支撑 */}
@@ -312,7 +315,7 @@ function SlideSolutionOverview() {
               </div>
               <div>
                 <p className="text-xs font-medium text-sky-500 uppercase tracking-wide">Part I</p>
-                <h3 className="text-xl font-bold text-sky-700">AI赋能HR · 战略支撑</h3>
+                <h3 className="text-xl font-bold text-sky-700">AI赋能管理者 · 战略和决策支撑</h3>
               </div>
             </div>
             <p className="text-sm text-sky-600/80 mb-4 leading-relaxed">
@@ -323,7 +326,7 @@ function SlideSolutionOverview() {
               {[
                 { icon: <TrendingUp className="w-6 h-6" />, title: '人才趋势分析', desc: 'AI采集国内外多家顶级同业公司JD，洞察行业人才需求变化与战略转移信号', metric: '国内外同业机构 · 上千条JD' },
                 { icon: <Map className="w-6 h-6" />, title: '人才地图', desc: '猎头AI智能体挖掘同行业顶尖人才，构建精准目标人才库并持续追踪更新', metric: '高级人才追踪 · 多类信息源' },
-                { icon: <Brain className="w-6 h-6" />, title: 'AI研判与战略建议', desc: '基于数据自动生成紧急行动、战略布局、成本优化建议，HR评审决策', metric: '预测战略信号' },
+                { icon: <Brain className="w-6 h-6" />, title: 'AI研判与战略建议', desc: '基于互联网挖掘数据和公司/业务线战略规划，自动生成人才布局与管理行动建议', metric: '预测战略信号' },
               ].map((item, i) => (
                 <div key={i} className="flex items-start gap-3 p-3.5 rounded-lg bg-white/80 border border-sky-100">
                   <div className="w-10 h-10 rounded-lg bg-sky-100 flex items-center justify-center text-sky-600 shrink-0">
@@ -376,6 +379,43 @@ function SlideSolutionOverview() {
             </div>
           </div>
         </div>
+
+        {/* Part III：AI新员工融入与培养 */}
+        <div className="flex-1 flex flex-col">
+          <div className="rounded-xl bg-gradient-to-br from-emerald-50 to-teal-50 border-2 border-emerald-200 p-6 flex-1 flex flex-col">
+            <div className="flex items-center gap-3 mb-3">
+              <div className="w-14 h-14 rounded-xl bg-emerald-100 flex items-center justify-center">
+                <GraduationCap className="w-7 h-7 text-emerald-600" />
+              </div>
+              <div>
+                <p className="text-xs font-medium text-emerald-500 uppercase tracking-wide">Part III</p>
+                <h3 className="text-xl font-bold text-emerald-700">AI赋能新员工 · 快速融入与培养</h3>
+              </div>
+            </div>
+            <p className="text-sm text-emerald-600/80 mb-4 leading-relaxed">
+              AI全程陪伴新员工<strong>从入职到胜任</strong>，通过<strong>智能引导与个性化培养</strong>，
+              大幅缩短融入周期，加速新人产出价值。
+            </p>
+            <div className="space-y-2.5 flex-1">
+              {[
+                { icon: <UserCheck className="w-6 h-6" />, title: '智能入职引导', desc: 'AI导师7×24小时陪伴，自动推送入职流程、制度规范、团队介绍，消除新人迷茫感', metric: '入职首周 · 0等待' },
+                { icon: <Target className="w-6 h-6" />, title: '试用期个性化培养', desc: '基于岗位画像与个人能力评估，AI自动生成试用期培养计划并动态跟踪调整', metric: '千人千面 · 智能规划' },
+                { icon: <GraduationCap className="w-6 h-6" />, title: 'AI智能培训', desc: '根据人员画像与标签智能推荐学习内容，AI生成个性化学习路径并持续迭代优化', metric: '千人千面 · 持续提升' },
+              ].map((item, i) => (
+                <div key={i} className="flex items-start gap-3 p-3.5 rounded-lg bg-white/80 border border-emerald-100">
+                  <div className="w-10 h-10 rounded-lg bg-emerald-100 flex items-center justify-center text-emerald-600 shrink-0">
+                    {item.icon}
+                  </div>
+                  <div className="flex-1">
+                    <p className="text-sm font-bold text-emerald-700">{item.title}</p>
+                    <p className="text-sm text-emerald-600/70 mt-0.5 leading-relaxed">{item.desc}</p>
+                    <p className="text-[12px] text-emerald-500 mt-1.5 px-2 py-0.5 rounded bg-emerald-50 inline-block">{item.metric}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
       </div>
 
       {/* 底部核心理念 */}
@@ -383,14 +423,14 @@ function SlideSolutionOverview() {
         <div>
           <p className="text-base font-bold mb-1">核心理念</p>
           <p className="text-sm text-white/80">
-            AI不是替代，是成为HR最强大的智能助手。<span className="font-semibold text-white">「AI提效 + 人工提质」</span>的最佳协同范式
+            AI不是替代，是成为HR最强大的智能助手。<span className="font-semibold text-white">「战略先行 + 招聘提效 + 育人加速」</span>三位一体的AI×HR协同范式
           </p>
         </div>
         <div className="flex items-center gap-6 shrink-0 ml-8">
           {[
             { label: '战略洞察', icon: <Radar className="w-4 h-4" /> },
-            { label: '全流程覆盖', icon: <Layers className="w-4 h-4" /> },
-            { label: '人机协作', icon: <HandshakeIcon className="w-4 h-4" /> },
+            { label: '招聘全流程', icon: <Layers className="w-4 h-4" /> },
+            { label: '融入培养', icon: <GraduationCap className="w-4 h-4" /> },
           ].map((item, i) => (
             <div key={i} className="flex items-center gap-1.5 text-white/80 text-sm">
               {item.icon}<span>{item.label}</span>
@@ -408,7 +448,7 @@ function SlideSolutionOverview() {
 function SlideTalentRadarOverview() {
   return (
     <div className="h-screen-100vh px-10 py-20 flex flex-col">
-      <SlideTitle sub="Part I · AI赋能HR战略决策：从被动招人到主动布局">🛰️ 人才战略雷达方案</SlideTitle>
+      <SlideTitle sub="Part I · AI赋能管理者战略决策：从被动招人到主动布局">🛰️ 人才战略雷达方案</SlideTitle>
 
       <div className="flex-1 flex gap-6">
         {/* 左：方案核心 */}
@@ -445,7 +485,7 @@ function SlideTalentRadarOverview() {
                 color: '#6366f1',
                 metrics: '48家机构 · 1,247条JD',
                 details: [
-                  { label: '头部券商', value: '12家' },
+                  { label: '头部券商', value: '5家' },
                   { label: '金融科技', value: '10家' },
                   { label: '外资投行', value: '6家' },
                 ],
@@ -477,13 +517,13 @@ function SlideTalentRadarOverview() {
               {
                 icon: <Brain className="w-6 h-6" />,
                 title: '战略建议',
-                desc: 'AI基于数据自动研判，输出紧急行动、战略布局、成本优化建议',
+                desc: 'AI基于数据自动研判，给出人才引进、人才培养以及内部人才挖掘等建议',
                 color: '#8b5cf6',
-                metrics: '23个战略信号 · 87.3%准确',
+                metrics: '3个战略信号 · 15条建议',
                 details: [
-                  { label: '紧急行动', value: '5项' },
-                  { label: '战略布局', value: '8项' },
-                  { label: '成本优化', value: '3项' },
+                  { label: '人才引进', value: '5项' },
+                  { label: '人才培养', value: '8项' },
+                  { label: '人员结构', value: '3项' },
                 ],
               },
             ].map((item, i) => (
@@ -786,8 +826,8 @@ function SlideTalentStrategyInsights() {
           </div>
           <div className="space-y-1.5 flex-1">
             {[
-              { line: '量化投研', demand: 58, trend: '爆发增长', priority: '最高', desc: 'AI策略研发、因子挖掘、组合优化', color: '#6366f1' },
-              { line: '金融科技', demand: 45, trend: '快速增长', priority: '高', desc: '大模型应用、交易系统、智能客服', color: '#8b5cf6' },
+              { line: '自营业务', demand: 58, trend: '爆发增长', priority: '最高', desc: 'AI策略研发、因子挖掘、组合优化', color: '#6366f1' },
+              { line: '财富管理', demand: 45, trend: '快速增长', priority: '高', desc: '大模型应用、交易系统、智能客服', color: '#8b5cf6' },
               { line: '风控合规', demand: 35, trend: '持续增长', priority: '高', desc: '实时风控、反洗钱、监管报送', color: '#f59e0b' },
               { line: '资产管理', demand: 28, trend: '稳步增长', priority: '中', desc: '智能投顾、FOF组合、客户画像', color: '#0ea5e9' },
               { line: '投资银行', demand: 22, trend: '新兴需求', priority: '中', desc: 'IPO智能审核、估值模型、尽调AI', color: '#22c55e' },
@@ -883,7 +923,7 @@ function SlideTalentProfile() {
 
   return (
     <div className="h-screen-100vh px-10 py-20 flex flex-col">
-      <SlideTitle sub="通过分析同业岗位与人才战略，提取各类人才所需软硬件技能与特征，形成人才标准闭环">🎯 构建人才需求画像</SlideTitle>
+      <SlideTitle sub="通过分析同业岗位与人才战略，提取各类人才所需软硬件技能与特征">🎯 构建人才需求画像</SlideTitle>
 
       <div className="flex-1 flex gap-5">
         {/* 左侧：人才画像卡片 */}
@@ -1005,129 +1045,101 @@ function SlideStrategicRecommendations() {
       <SlideTitle sub="基于人才趋势和人才地图数据，AI给出战略行动建议">🧠 AI研判与战略建议</SlideTitle>
 
       <div className="flex-1 grid grid-cols-3 gap-5">
-        {/* 紧急行动 */}
-        <div className="rounded-xl border-2 border-red-200 bg-red-50/30 p-5 flex flex-col">
+        {/* 人才引进 */}
+        <div className="rounded-xl border-2 border-indigo-200 bg-indigo-50/30 p-5 flex flex-col">
           <div className="flex items-center gap-2 mb-10">
-            <div className="w-12 h-12 rounded-xl bg-red-100 flex items-center justify-center">
-              <AlertTriangle className="w-6 h-6 text-red-500" />
+            <div className="w-12 h-12 rounded-xl bg-indigo-100 flex items-center justify-center">
+              <Users className="w-6 h-6 text-indigo-500" />
             </div>
             <div>
-              <h3 className="text-base font-bold text-red-700">紧急行动</h3>
-              <p className="text-[13px] text-red-400">建议立即启动</p>
+              <h3 className="text-base font-bold text-indigo-700">人才引进</h3>
+              <p className="text-[13px] text-indigo-400">外部精准招聘建议</p>
             </div>
           </div>
           <div className="space-y-3 flex-1">
-            <div className="p-3 rounded-lg bg-white border border-red-100">
+            <div className="p-3 rounded-lg bg-white border border-indigo-100">
               <p className="text-sm font-semibold text-foreground mb-1">加速AI量化人才招聘</p>
               <p className="text-[13px] text-muted leading-relaxed">中金、华泰已全面布局，建议立即启动3-5名AI量化研究员招聘，从东方证券、幻方量化定向挖猎</p>
               <div className="flex items-center gap-2 mt-2">
-                <span className="text-[11px] px-1.5 py-0.5 rounded-full bg-red-50 text-red-500 font-medium">影响：高</span>
-                <span className="text-[11px] px-1.5 py-0.5 rounded-full bg-red-50 text-red-500 font-medium">立即</span>
+                <span className="text-[11px] px-1.5 py-0.5 rounded-full bg-indigo-50 text-indigo-500 font-medium">优先级：高</span>
+                <span className="text-[11px] px-1.5 py-0.5 rounded-full bg-indigo-50 text-indigo-500 font-medium">立即启动</span>
               </div>
             </div>
-            <div className="p-3 rounded-lg bg-white border border-red-100">
+            <div className="p-3 rounded-lg bg-white border border-indigo-100">
               <p className="text-sm font-semibold text-foreground mb-1">抢占金融大模型赛道</p>
-              <p className="text-[13px] text-muted leading-relaxed">LLM/RAG技能需求6个月增长218%，建议组建5人金融大模型团队，从百度、字节招聘</p>
+              <p className="text-[13px] text-muted leading-relaxed">LLM/RAG技能需求6个月增长218%，建议组建5人金融大模型团队，从百度、字节定向招聘</p>
               <div className="flex items-center gap-2 mt-2">
-                <span className="text-[11px] px-1.5 py-0.5 rounded-full bg-red-50 text-red-500 font-medium">影响：高</span>
-                <span className="text-[11px] px-1.5 py-0.5 rounded-full bg-red-50 text-red-500 font-medium">1个月内</span>
+                <span className="text-[11px] px-1.5 py-0.5 rounded-full bg-indigo-50 text-indigo-500 font-medium">优先级：高</span>
+                <span className="text-[11px] px-1.5 py-0.5 rounded-full bg-indigo-50 text-indigo-500 font-medium">1个月内</span>
               </div>
             </div>
-            <div className="p-3 rounded-lg bg-white border border-red-100">
-              <p className="text-sm font-semibold text-foreground mb-1">启动ESG人才储备</p>
-              <p className="text-[13px] text-muted leading-relaxed">ESG分析师需求增长156%，头部外资行已建立专职团队，建议提前布局2-3名ESG人才</p>
+            <div className="p-3 rounded-lg bg-white border border-indigo-100">
+              <p className="text-sm font-semibold text-foreground mb-1">把握外资人才回流窗口</p>
+              <p className="text-[13px] text-muted leading-relaxed">瑞银、摩根亚太区频繁调整，VP级人才有回流意愿，建议主动接触高匹配度候选人</p>
               <div className="flex items-center gap-2 mt-2">
-                <span className="text-[11px] px-1.5 py-0.5 rounded-full bg-red-50 text-red-500 font-medium">影响：中</span>
-                <span className="text-[11px] px-1.5 py-0.5 rounded-full bg-red-50 text-red-500 font-medium">2个月内</span>
+                <span className="text-[11px] px-1.5 py-0.5 rounded-full bg-indigo-50 text-indigo-500 font-medium">优先级：中</span>
+                <span className="text-[11px] px-1.5 py-0.5 rounded-full bg-indigo-50 text-indigo-500 font-medium">持续关注</span>
               </div>
             </div>
           </div>
         </div>
 
-        {/* 战略布局 */}
+        {/* 人才培养 */}
         <div className="rounded-xl border-2 border-amber-200 bg-amber-50/30 p-5 flex flex-col">
           <div className="flex items-center gap-2 mb-10">
             <div className="w-12 h-12 rounded-xl bg-amber-100 flex items-center justify-center">
-              <Target className="w-6 h-6 text-amber-600" />
+              <GraduationCap className="w-6 h-6 text-amber-600" />
             </div>
             <div>
-              <h3 className="text-base font-bold text-amber-700">战略布局</h3>
-              <p className="text-[13px] text-amber-400">3-6个月规划</p>
+              <h3 className="text-base font-bold text-amber-700">人才培养</h3>
+              <p className="text-[13px] text-amber-400">能力建设与发展规划</p>
             </div>
           </div>
           <div className="space-y-3 flex-1">
             <div className="p-3 rounded-lg bg-white border border-amber-100">
-              <p className="text-sm font-semibold text-foreground mb-1">建立合规科技人才储备</p>
-              <p className="text-[13px] text-muted leading-relaxed">监管科技需求增长192%，供给不足。提前储备3-4名RegTech人才</p>
-              <span className="text-[11px] px-1.5 py-0.5 rounded-full bg-amber-50 text-amber-500 font-medium">3个月内</span>
-            </div>
-            <div className="p-3 rounded-lg bg-white border border-amber-100">
-              <p className="text-sm font-semibold text-foreground mb-1">把握外资人才回流窗口</p>
-              <p className="text-[13px] text-muted leading-relaxed">瑞银、摩根亚太区频繁调整，VP级人才有回流意愿，主动接触</p>
-              <span className="text-[11px] px-1.5 py-0.5 rounded-full bg-amber-50 text-amber-500 font-medium">持续关注</span>
+              <p className="text-sm font-semibold text-foreground mb-1">建设内部AI能力中心</p>
+              <p className="text-[13px] text-muted leading-relaxed">组建AI CoE团队，设计分层培训体系，系统提升现有技术团队的AI应用能力</p>
+              <span className="text-[11px] px-1.5 py-0.5 rounded-full bg-amber-50 text-amber-500 font-medium">3个月内启动</span>
             </div>
             <div className="p-3 rounded-lg bg-white border border-amber-100">
               <p className="text-sm font-semibold text-foreground mb-1">构建校企合作管道</p>
-              <p className="text-[13px] text-muted leading-relaxed">清华、北大AI毕业生供不应求，建立联合培养/实习项目锁定未来人才</p>
-              <span className="text-[11px] px-1.5 py-0.5 rounded-full bg-amber-50 text-amber-500 font-medium">6个月内</span>
+              <p className="text-[13px] text-muted leading-relaxed">清华、北大AI毕业生供不应求，建立联合培养/实习项目，锁定未来高潜人才</p>
+              <span className="text-[11px] px-1.5 py-0.5 rounded-full bg-amber-50 text-amber-500 font-medium">6个月内落地</span>
             </div>
             <div className="p-3 rounded-lg bg-white border border-amber-100">
-              <p className="text-sm font-semibold text-foreground mb-1">建设内部AI能力中心</p>
-              <p className="text-[13px] text-muted leading-relaxed">组建AI CoE团队，沉淀金融AI能力，支撑业务持续创新</p>
-              <span className="text-[11px] px-1.5 py-0.5 rounded-full bg-amber-50 text-amber-500 font-medium">6个月内</span>
+              <p className="text-sm font-semibold text-foreground mb-1">关键岗位AI转型培训</p>
+              <p className="text-[13px] text-muted leading-relaxed">针对合规、风控等岗位，设计AI工具实操培训课程，推动业务团队数智化转型</p>
+              <span className="text-[11px] px-1.5 py-0.5 rounded-full bg-amber-50 text-amber-500 font-medium">持续推进</span>
             </div>
           </div>
         </div>
 
-        {/* 成本优化 + 地域洞察 */}
-        <div className="flex flex-col gap-4">
-          <div className="rounded-xl border-2 border-green-200 bg-green-50/30 p-5">
-            <div className="flex items-center gap-2 mb-4">
-              <div className="w-12 h-12 rounded-xl bg-green-100 flex items-center justify-center">
-                <DollarSign className="w-6 h-6 text-green-600" />
-              </div>
-              <div>
-                <h3 className="text-base font-bold text-green-700">成本优化</h3>
-                <p className="text-[13px] text-green-400">薪酬策略建议</p>
-              </div>
+        {/* 内部人才挖掘 */}
+        <div className="rounded-xl border-2 border-emerald-200 bg-emerald-50/30 p-5 flex flex-col">
+          <div className="flex items-center gap-2 mb-10">
+            <div className="w-12 h-12 rounded-xl bg-emerald-100 flex items-center justify-center">
+              <Search className="w-6 h-6 text-emerald-600" />
             </div>
-            <div className="space-y-2">
-              <div className="p-2.5 rounded-lg bg-white border border-green-100">
-                <p className="text-sm font-semibold text-foreground">调整关键岗位薪酬带宽</p>
-                <p className="text-[13px] text-muted">AI量化市场价80-150万，对标P75</p>
-              </div>
-              <div className="p-2.5 rounded-lg bg-white border border-green-100">
-                <p className="text-sm font-semibold text-foreground">关注中小券商隐藏人才</p>
-                <p className="text-[13px] text-muted">华林/国信等机构性价比高</p>
-              </div>
-              <div className="p-2.5 rounded-lg bg-white border border-green-100">
-                <p className="text-sm font-semibold text-foreground">灵活用工+远程协作</p>
-                <p className="text-[13px] text-muted">海外人才可考虑远程模式，降低30%成本</p>
-              </div>
+            <div>
+              <h3 className="text-base font-bold text-emerald-700">内部人才挖掘</h3>
+              <p className="text-[13px] text-emerald-400">盘活存量人才资源</p>
             </div>
           </div>
-
-          <div className="rounded-xl border border-border p-4 flex-1">
-            <h4 className="text-sm font-semibold text-foreground mb-3 flex items-center gap-1.5">
-              <Globe className="w-3.5 h-3.5 text-sky-500" />
-              地域人才热力
-            </h4>
-            <div className="space-y-2">
-              {[
-                { region: '大陆(北上深)', growth: '+120%', color: '#6366f1' },
-                { region: '新加坡', growth: '+85%', color: '#22c55e' },
-                { region: '香港', growth: '+65%', color: '#0ea5e9' },
-                { region: '美国', growth: '+45%', color: '#ec4899' },
-                { region: '日本', growth: '+30%', color: '#f59e0b' },
-              ].map((r, i) => (
-                <div key={i} className="flex items-center gap-2">
-                  <span className="text-[13px] text-muted w-20">{r.region}</span>
-                  <div className="flex-1 h-2.5 rounded-full bg-slate-100">
-                    <div className="h-full rounded-full" style={{ width: `${parseInt(r.growth) / 1.5}%`, backgroundColor: r.color }} />
-                  </div>
-                  <span className="text-[13px] font-bold w-10 text-right" style={{ color: r.color }}>{r.growth}</span>
-                </div>
-              ))}
+          <div className="space-y-3 flex-1">
+            <div className="p-3 rounded-lg bg-white border border-emerald-100">
+              <p className="text-sm font-semibold text-foreground mb-1">AI驱动人才盘点</p>
+              <p className="text-[13px] text-muted leading-relaxed">利用AI分析现有员工技能图谱，识别具备AI/量化潜力的隐藏人才，优先内部转岗培养</p>
+              <span className="text-[11px] px-1.5 py-0.5 rounded-full bg-emerald-50 text-emerald-500 font-medium">立即启动</span>
+            </div>
+            <div className="p-3 rounded-lg bg-white border border-emerald-100">
+              <p className="text-sm font-semibold text-foreground mb-1">跨部门人才流动机制</p>
+              <p className="text-[13px] text-muted leading-relaxed">打通技术与业务部门人才壁垒，建立内部轮岗与项目借调机制，激发复合型人才成长</p>
+              <span className="text-[11px] px-1.5 py-0.5 rounded-full bg-emerald-50 text-emerald-500 font-medium">3个月内</span>
+            </div>
+            <div className="p-3 rounded-lg bg-white border border-emerald-100">
+              <p className="text-sm font-semibold text-foreground mb-1">高潜人才加速计划</p>
+              <p className="text-[13px] text-muted leading-relaxed">AI识别绩优且学习力强的员工，纳入关键岗位继任者计划，配备专属发展资源</p>
+              <span className="text-[11px] px-1.5 py-0.5 rounded-full bg-emerald-50 text-emerald-500 font-medium">持续推进</span>
             </div>
           </div>
         </div>
@@ -1135,7 +1147,7 @@ function SlideStrategicRecommendations() {
 
       <div className="mt-4 text-center">
         <p className="text-sm text-muted px-6 py-2 rounded-full bg-indigo-50 text-indigo-600 inline-block">
-          💡 以上建议由AI基于多家机构JD、年报/ESG报告、以及外部信息源自动分析生成
+          💡 以上建议由AI基于内部信息源（公司全年及各业务线战略规划）和外部信息源（多家机构JD、年报、以及权威互联网信息）自动分析生成
         </p>
       </div>
     </div>
@@ -1267,7 +1279,7 @@ function SlideTalentMap() {
 
           <div className="rounded-xl bg-gradient-to-r from-violet-500 to-indigo-500 p-4 text-white text-center">
             <p className="text-sm font-semibold mb-2">信息来源</p>
-            <p className="text-[12px] opacity-80 leading-relaxed">LinkedIn · 技术社区 · 论文库 · 专利库 · 行业论坛 · GitHub · 年报</p>
+            <p className="text-[12px] opacity-80 leading-relaxed">猎聘 · Boss直聘 · LinkedIn · 猎头 · 互联网信息</p>
           </div>
         </div>
       </div>
@@ -1281,82 +1293,107 @@ function SlideTalentMap() {
    Slide 8: AI招聘全流程方案整体描述
    ================================================================ */
 function SlideRecruitmentPipeline() {
-  const stages = [
-    { icon: <Megaphone className="w-10 h-10" />, label: '岗位发布', color: '#6366f1', mode: 'AI主导' },
-    { icon: <FileSearch className="w-10 h-10" />, label: '简历筛选', color: '#8b5cf6', mode: 'AI主导' },
-    { icon: <CalendarClock className="w-10 h-10" />, label: '自动约面', color: '#a855f7', mode: 'AI主导' },
-    { icon: <Bot className="w-10 h-10" />, label: 'AI面试', color: '#d946ef', mode: 'AI主导' },
-    { icon: <Users className="w-10 h-10" />, label: '二轮面试', color: '#ec4899', mode: '人工主导' },
-    { icon: <Award className="w-10 h-10" />, label: '候选人定级', color: '#f43f5e', mode: 'AI辅助' },
-    { icon: <DollarSign className="w-10 h-10" />, label: '候选人定薪', color: '#f97316', mode: 'AI辅助' },
-    { icon: <ClipboardCheck className="w-10 h-10" />, label: '入职审批', color: '#eab308', mode: 'AI辅助' },
-    { icon: <Send className="w-10 h-10" />, label: 'Offer发放', color: '#84cc16', mode: 'AI辅助' },
-    { icon: <ShieldCheck className="w-10 h-10" />, label: '候选人背调', color: '#22c55e', mode: 'AI主导' },
-    { icon: <Heart className="w-10 h-10" />, label: '保温池', color: '#14b8a6', mode: 'AI主导' },
-    { icon: <UserCheck className="w-10 h-10" />, label: '入职引导', color: '#06b6d4', mode: 'AI主导' },
-    { icon: <Target className="w-10 h-10" />, label: '试用期培养', color: '#3b82f6', mode: 'AI辅助' },
-    { icon: <GraduationCap className="w-10 h-10" />, label: '新员工培训', color: '#6366f1', mode: 'AI主导' },
+  const commonStart = [
+    { icon: <Megaphone className="w-10 h-10" />, label: '岗位发布', color: '#6366f1', mode: 'AI主导' as const },
+    { icon: <FileSearch className="w-10 h-10" />, label: '简历筛选', color: '#8b5cf6', mode: 'AI主导' as const },
+    { icon: <CalendarClock className="w-10 h-10" />, label: '自动约面', color: '#a855f7', mode: 'AI主导' as const },
+    { icon: <Bot className="w-10 h-10" />, label: 'AI面试', color: '#d946ef', mode: 'AI主导' as const },
+    { icon: <Users className="w-10 h-10" />, label: '二轮面试', color: '#ec4899', mode: '人工主导' as const },
+  ];
+
+  const branchA = [
+    { icon: <Award className="w-10 h-10" />, label: '候选人定级', color: '#f43f5e', mode: 'AI辅助' as const },
+    { icon: <DollarSign className="w-10 h-10" />, label: '候选人定薪', color: '#f97316', mode: 'AI辅助' as const },
+  ];
+
+  const branchB = [
+    { icon: <Briefcase className="w-10 h-10" />, label: '实习生管理', color: '#0ea5e9', mode: 'AI辅助' as const },
+  ];
+
+  const commonEnd = [
+    { icon: <ClipboardCheck className="w-10 h-10" />, label: '入职审批', color: '#eab308', mode: 'AI辅助' as const },
+    { icon: <Send className="w-10 h-10" />, label: 'Offer发放', color: '#84cc16', mode: 'AI辅助' as const },
+    { icon: <ShieldCheck className="w-10 h-10" />, label: '候选人背调', color: '#22c55e', mode: 'AI主导' as const },
+    { icon: <Heart className="w-10 h-10" />, label: '保温池', color: '#14b8a6', mode: 'AI主导' as const },
+    { icon: <UserCheck className="w-10 h-10" />, label: '入职引导', color: '#06b6d4', mode: 'AI主导' as const },
   ];
 
   const modeColor: Record<string, string> = {
     'AI主导': '#6366f1', 'AI辅助': '#f59e0b', '人工主导': '#3b82f6',
   };
 
+  const StageNode = ({ s }: { s: { icon: React.ReactNode; label: string; color: string; mode: string } }) => (
+    <div className="flex flex-col items-center">
+      <div className="w-20 h-20 rounded-xl flex items-center justify-center border-2 shadow-sm"
+        style={{ backgroundColor: s.color + '12', borderColor: s.color + '40', color: s.color }}>
+        {s.icon}
+      </div>
+      <p className="text-sm font-semibold text-foreground mt-1.5">{s.label}</p>
+      <span className="text-[12px] px-1.5 py-0.5 rounded-full mt-0.5 font-medium"
+        style={{ backgroundColor: modeColor[s.mode] + '12', color: modeColor[s.mode] }}>
+        {s.mode}
+      </span>
+    </div>
+  );
+
   return (
     <div className="h-screen-100vh px-10 py-20 flex flex-col">
-      <SlideTitle sub="Part II · AI赋能招聘全流程：从岗位发布到新员工培训，AI全程提质增效">🔄 AI招聘全流程方案</SlideTitle>
+      <SlideTitle sub="Part II · AI赋能招聘全流程：12个环节，AI全程提质增效">🔄 AI招聘全流程方案</SlideTitle>
 
       {/* 流程图 */}
-      <div className="flex-1 flex flex-col justify-center mt-20">
-        {/* 上排 7个 */}
-        <div className="flex items-center justify-center gap-1.5 mb-2">
-          {stages.slice(0, 7).map((s, i) => (
+      <div className="flex-1 flex flex-col justify-center mt-6">
+        {/* Row 1: 公共起始阶段 */}
+        <div className="flex items-center justify-center gap-1.5">
+          {commonStart.map((s, i) => (
             <div key={i} className="flex items-center gap-8">
-              <div className="flex flex-col items-center">
-                <div className="w-20 h-20 rounded-xl flex items-center justify-center border-2 shadow-sm"
-                  style={{ backgroundColor: s.color + '12', borderColor: s.color + '40', color: s.color }}>
-                  {s.icon}
-                </div>
-                <p className="text-sm font-semibold text-foreground mt-1.5">{s.label}</p>
-                <span className="text-[12px] px-1.5 py-0.5 rounded-full mt-0.5 font-medium"
-                  style={{ backgroundColor: modeColor[s.mode] + '12', color: modeColor[s.mode] }}>
-                  {s.mode}
-                </span>
-              </div>
-              {i < 6 && <ArrowRight className="w-10 h-10 text-border shrink-0 mt-[-40px] ml-[-25px]" />}
+              <StageNode s={s} />
+              {i < commonStart.length - 1 && <ArrowRight className="w-10 h-10 text-border shrink-0 mt-[-40px] ml-[-25px]" />}
             </div>
           ))}
         </div>
 
-        {/* 连接箭头 */}
-        <div className="flex justify-center my-2">
-          <div className="w-px h-10 bg-border" />
+        {/* 分支区域 */}
+        <div className="flex justify-center my-3">
+          <div className="flex items-stretch gap-10">
+            {/* 分支A：正式员工路径 */}
+            <div className="flex flex-col items-center">
+              <div className="w-px h-6 bg-border" />
+              <span className="text-[11px] font-semibold px-2.5 py-1 rounded-full bg-rose-50 text-rose-500 border border-rose-200 mb-2">正式员工路径</span>
+              <div className="flex items-center gap-1.5">
+                {branchA.map((s, i) => (
+                  <div key={i} className="flex items-center gap-8">
+                    <StageNode s={s} />
+                    {i < branchA.length - 1 && <ArrowRight className="w-10 h-10 text-border shrink-0 mt-[-40px] ml-[-25px]" />}
+                  </div>
+                ))}
+              </div>
+              <div className="w-px h-6 bg-border" />
+            </div>
+
+            {/* 分支B：实习生路径 */}
+            <div className="flex flex-col items-center">
+              <div className="w-px h-6 bg-border" />
+              <span className="text-[11px] font-semibold px-2.5 py-1 rounded-full bg-sky-50 text-sky-500 border border-sky-200 mb-2">实习生路径</span>
+              <StageNode s={branchB[0]} />
+              <div className="w-px h-6 bg-border" />
+            </div>
+          </div>
         </div>
 
-        {/* 下排 7个 */}
-        <div className="flex items-center justify-center gap-1.5 mb-2">
-          {stages.slice(7, 14).map((s, i) => (
+        {/* Row 2: 公共结束阶段 */}
+        <div className="flex items-center justify-center gap-1.5">
+          {commonEnd.map((s, i) => (
             <div key={i} className="flex items-center gap-8">
-              <div className="flex flex-col items-center">
-                <div className="w-20 h-20 rounded-xl flex items-center justify-center border-2 shadow-sm"
-                  style={{ backgroundColor: s.color + '12', borderColor: s.color + '40', color: s.color }}>
-                  {s.icon}
-                </div>
-                <p className="text-sm font-semibold text-foreground mt-1.5">{s.label}</p>
-                <span className="text-[12px] px-1.5 py-0.5 rounded-full mt-0.5 font-medium"
-                  style={{ backgroundColor: modeColor[s.mode] + '12', color: modeColor[s.mode] }}>
-                  {s.mode}
-                </span>
-              </div>
-              {i < 6 && <ArrowRight className="w-10 h-10 text-border shrink-0 mt-[-40px] ml-[-25px]" />}
+              <StageNode s={s} />
+              {i < commonEnd.length - 1 && <ArrowRight className="w-10 h-10 text-border shrink-0 mt-[-40px] ml-[-25px]" />}
             </div>
           ))}
         </div>
 
         {/* 图例 */}
-        <div className="flex items-center justify-center gap-6 mt-10">
+        <div className="flex items-center justify-center gap-6 mt-8">
           {[
-            { mode: 'AI主导', count: 8, desc: 'AI独立完成，HR复核', color: '#6366f1' },
+            { mode: 'AI主导', count: 7, desc: 'AI独立完成，HR复核', color: '#6366f1' },
             { mode: 'AI辅助', count: 5, desc: 'AI提供建议，HR决策', color: '#f59e0b' },
             { mode: '人工主导', count: 1, desc: 'HR执行，AI赋能', color: '#3b82f6' },
           ].map((item, i) => (
@@ -1369,7 +1406,7 @@ function SlideRecruitmentPipeline() {
         </div>
 
         {/* 核心价值 */}
-        <div className="flex items-center justify-center gap-4 mt-8">
+        <div className="flex items-center justify-center gap-4 mt-6">
           {[
             { icon: <Zap className="w-5 h-5" />, label: '招聘周期缩短', color: '#f59e0b' },
             { icon: <TrendingUp className="w-5 h-5" />, label: 'HR效能提升', color: '#22c55e' },
@@ -1401,10 +1438,10 @@ function SlideCollaborationModel() {
           <div className="text-center mb-4">
             <span className="text-3xl">🤖</span>
             <h3 className="text-lg font-bold text-indigo-700 mt-2">AI主导 · 人工复核</h3>
-            <p className="text-sm text-indigo-500 mt-1">8个环节 · 自动化程度最高</p>
+            <p className="text-sm text-indigo-500 mt-1">7个环节 · 自动化程度最高</p>
           </div>
           <div className="space-y-2 flex-1">
-            {['岗位发布', '简历筛选', '自动约面', 'AI面试', '候选人背调', '保温池', '入职引导', '新员工培训'].map((s, i) => (
+            {['岗位发布', '简历筛选', '自动约面', 'AI面试', '候选人背调', '保温池', '入职引导'].map((s, i) => (
               <div key={i} className="flex items-center gap-2 text-sm text-indigo-700 bg-white/80 rounded-lg px-3 py-2.5">
                 <CheckCircle2 className="w-3.5 h-3.5 text-indigo-400 shrink-0" />{s}
               </div>
@@ -1423,7 +1460,7 @@ function SlideCollaborationModel() {
             <p className="text-sm text-amber-500 mt-1">5个环节 · 数据驱动决策</p>
           </div>
           <div className="space-y-2 flex-1">
-            {['候选人定级', '候选人定薪', '入职审批', 'Offer发放', '试用期培养'].map((s, i) => (
+            {['候选人定级', '候选人定薪', '入职审批', 'Offer发放', '实习生管理'].map((s, i) => (
               <div key={i} className="flex items-center gap-2 text-sm text-amber-700 bg-white/80 rounded-lg px-3 py-2.5">
                 <CheckCircle2 className="w-3.5 h-3.5 text-amber-400 shrink-0" />{s}
               </div>
@@ -1484,29 +1521,25 @@ function SlideJobPostingScreening() {
           </div>
 
           <div className="space-y-3 flex-1">
-            <div className="grid grid-cols-2 gap-2">
-              {['智能JD生成优化', '多渠道一键发布', '竞品JD对标分析', 'SEO关键词优化'].map((t, i) => (
+            <div className="grid grid-cols-3 gap-2">
+              {['智能JD生成优化', '多渠道一键发布', '竞品JD对标分析'].map((t, i) => (
                 <div key={i} className="flex items-center gap-1.5 text-sm text-indigo-700 bg-white rounded-lg px-2.5 py-2">
                   <Zap className="w-5 h-5 text-indigo-400 shrink-0" />{t}
                 </div>
               ))}
             </div>
             <div className="p-3 rounded-lg bg-white border border-indigo-100 mt-5">
-              <p className="text-sm text-muted mb-2">AI如何优化JD</p>
-              {[
-                { label: '岗位精准度', pct: 95 },
-                { label: '关键词覆盖', pct: 92 },
-                { label: '吸引力评分', pct: 88 },
-                { label: '合规性检查', pct: 98 },
-              ].map((d, i) => (
-                <div key={i} className="flex items-center gap-2 mt-3">
-                  <span className="text-[12px] text-muted w-16">{d.label}</span>
-                  <div className="flex-1 h-2 rounded-full bg-indigo-100">
-                    <div className="h-full rounded-full bg-indigo-500" style={{ width: `${d.pct}%` }} />
-                  </div>
-                  <span className="text-[12px] font-semibold text-indigo-600 w-8 text-right">{d.pct}</span>
+              <p className="text-sm text-muted mb-2">AI智能生成JD示例</p>
+              <div className="space-y-2 text-[12px] leading-relaxed">
+                <div className="p-2 rounded bg-indigo-50/60">
+                  <p className="font-semibold text-indigo-700 mb-0.5">岗位：AI量化研究员</p>
+                  <p className="text-muted">负责基于深度学习的Alpha因子挖掘与组合优化，要求精通Python/C++，熟悉PyTorch等框架，有5年+量化策略经验...</p>
                 </div>
-              ))}
+                <div className="p-2 rounded bg-indigo-50/60">
+                  <p className="font-semibold text-indigo-700 mb-0.5">岗位：金融大模型工程师</p>
+                  <p className="text-muted">主导金融场景 LLM 微调与 RAG 架构设计，要求有Transformer架构实战经验，熟悉向量数据库...</p>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -1545,21 +1578,17 @@ function SlideJobPostingScreening() {
               ))}
             </div>
             <div className="p-3 rounded-lg bg-white border border-purple-100 mt-5">
-              <p className="text-sm text-muted mb-2">评估维度示例</p>
-              {[
-                { label: '技能匹配度', pct: 92 },
-                { label: '经验相关度', pct: 85 },
-                { label: '学历匹配', pct: 95 },
-                { label: '稳定性', pct: 78 },
-              ].map((d, i) => (
-                <div key={i} className="flex items-center gap-2 mt-3">
-                  <span className="text-[12px] text-muted w-16">{d.label}</span>
-                  <div className="flex-1 h-2 rounded-full bg-purple-100">
-                    <div className="h-full rounded-full bg-purple-500" style={{ width: `${d.pct}%` }} />
-                  </div>
-                  <span className="text-[12px] font-semibold text-purple-600 w-8 text-right">{d.pct}</span>
+              <p className="text-sm text-muted mb-2">AI简历摘要示例</p>
+              <div className="space-y-2 text-[12px] leading-relaxed">
+                <div className="p-2 rounded bg-purple-50/60">
+                  <p className="font-semibold text-purple-700 mb-0.5">张明远 · AI量化研究员</p>
+                  <p className="text-muted">12年量化经验，北大数学硕士。现任东方证券量化投资总监，管理30人团队，年化收益Top3。技能匹配度 <span className="font-semibold text-purple-600">96分</span></p>
                 </div>
-              ))}
+                <div className="p-2 rounded bg-purple-50/60">
+                  <p className="font-semibold text-purple-700 mb-0.5">王珊珊 · NLP技术负责人</p>
+                  <p className="text-muted">8年AI经验，浙大AI硕士。现任国信证券NLP负责人，主导金融大模型落地。技能匹配度 <span className="font-semibold text-purple-600">92分</span></p>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -1720,7 +1749,7 @@ function SlideGradingSalary() {
 
           <div className="space-y-3 flex-1">
             <div className="grid grid-cols-2 gap-2">
-              {['多维度能力画像', '行业对标分析', '内部公平性校验', 'AI定级建议'].map((t, i) => (
+              {['多维度能力画像', '行业对标分析', '内部数据参考', 'AI定级建议'].map((t, i) => (
                 <div key={i} className="flex items-center gap-1.5 text-xs text-red-700 bg-white rounded-lg px-2.5 py-2">
                   <Zap className="w-5 h-5 text-red-400 shrink-0" />{t}
                 </div>
@@ -1759,7 +1788,7 @@ function SlideGradingSalary() {
             </div>
             <div className="p-2.5 rounded-lg bg-green-50 border border-green-100 flex items-center justify-center gap-2">
               <Shield className="w-4 h-4 text-green-600" />
-              <span className="text-sm font-bold text-green-700">内部公平性</span>
+              <span className="text-sm font-bold text-green-700">定级科学性</span>
               <TrendingUp className="w-4 h-4 text-green-500" />
             </div>
           </div>
@@ -1838,29 +1867,90 @@ function SlideGradingSalary() {
 }
 
 /* ================================================================
-   Slide 13: 试用期培养 + 新员工培训
+   Slide 13: Part III · AI员工赋能方案
    ================================================================ */
 function SlideTrainingGrowth() {
   return (
     <div className="h-screen-100vh px-10 py-20 flex flex-col">
-      <SlideTitle sub="AI全程陪伴新员工成长，缩短融入周期">🎓 试用期培养 & 新员工培训</SlideTitle>
+      <SlideTitle sub="Part III · AI全程陪伴新员工从入职到胜任，缩短融入周期，加速产出价值">🎓 AI员工赋能方案</SlideTitle>
 
-      <div className="flex-1 grid grid-cols-2 gap-6">
-        {/* 试用期培养 */}
-        <div className="rounded-xl border border-blue-100 bg-blue-50/30 p-5 flex flex-col">
+      <div className="flex-1 grid grid-cols-3 gap-5">
+        {/* 智能入职引导 */}
+        <div className="rounded-xl border-2 border-emerald-200 bg-emerald-50/30 p-5 flex flex-col">
           <div className="flex items-center gap-3 mb-4">
-            <div className="w-15 h-15 rounded-xl bg-blue-100 flex items-center justify-center">
-              <Target className="w-8 h-8 text-blue-600" />
+            <div className="w-14 h-14 rounded-xl bg-emerald-100 flex items-center justify-center">
+              <UserCheck className="w-7 h-7 text-emerald-600" />
             </div>
             <div>
-              <h3 className="text-base font-bold text-blue-700">AI试用期培养</h3>
-              <p className="text-sm text-blue-400">AI辅助 · 主管决策</p>
+              <h3 className="text-base font-bold text-emerald-700">智能入职引导</h3>
+              <p className="text-sm text-emerald-400">AI主导 · 7×24陪伴</p>
             </div>
           </div>
 
           <div className="space-y-3 flex-1">
             <div className="grid grid-cols-2 gap-2">
-              {['入职30/60/90天目标', '导师智能匹配', '绩效实时追踪', '风险预警提醒'].map((t, i) => (
+              {['入职流程自动推送', '制度规范智能问答', '团队成员介绍', '办公环境导航'].map((t, i) => (
+                <div key={i} className="flex items-center gap-1.5 text-sm text-emerald-700 bg-white rounded-lg px-2.5 py-2">
+                  <Zap className="w-3.5 h-3.5 text-emerald-400 shrink-0" />{t}
+                </div>
+              ))}
+            </div>
+
+            <div className="p-3 rounded-lg bg-white border border-emerald-100">
+              <p className="text-sm font-semibold text-foreground mb-2">AI入职助手示例</p>
+              <div className="space-y-2">
+                {[
+                  { time: 'Day 1', content: '欢迎消息、入职材料清单、IT账号开通指引', icon: '📋' },
+                  { time: 'Day 2', content: '部门介绍、直属团队成员画像、Mentor匹配', icon: '👥' },
+                  { time: 'Day 3', content: '业务系统培训、常用工具指南、首周任务安排', icon: '🛠️' },
+                  { time: 'Week 1', content: '适应度评估、困惑解答、反馈收集', icon: '📊' },
+                ].map((item, i) => (
+                  <div key={i} className="flex items-center gap-2 px-2 py-1.5 rounded bg-emerald-50/50">
+                    <span className="text-base">{item.icon}</span>
+                    <span className="text-[12px] font-semibold text-emerald-600 w-12 shrink-0">{item.time}</span>
+                    <span className="text-[12px] text-muted flex-1">{item.content}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="p-3 rounded-lg bg-white border border-emerald-100">
+              <p className="text-sm font-semibold text-foreground mb-1">核心价值</p>
+              <p className="text-[12px] text-emerald-600/80 leading-relaxed">
+                消除新人入职迷茫感，AI导师随时解答疑问，实现入职首周零等待、零遗漏。
+              </p>
+            </div>
+          </div>
+
+          <div className="mt-3 grid grid-cols-2 gap-2">
+            <div className="p-2 rounded-lg bg-amber-50 border border-amber-100 flex items-center justify-center gap-1.5">
+              <Clock className="w-4 h-4 text-amber-600" />
+              <span className="text-sm font-bold text-amber-700">融入周期</span>
+              <TrendingDown className="w-4 h-4 text-amber-500" />
+            </div>
+            <div className="p-2 rounded-lg bg-green-50 border border-green-100 flex items-center justify-center gap-1.5">
+              <Heart className="w-4 h-4 text-green-600" />
+              <span className="text-sm font-bold text-green-700">新人满意度</span>
+              <TrendingUp className="w-4 h-4 text-green-500" />
+            </div>
+          </div>
+        </div>
+
+        {/* 试用期个性化培养 */}
+        <div className="rounded-xl border-2 border-blue-200 bg-blue-50/30 p-5 flex flex-col">
+          <div className="flex items-center gap-3 mb-4">
+            <div className="w-14 h-14 rounded-xl bg-blue-100 flex items-center justify-center">
+              <Target className="w-7 h-7 text-blue-600" />
+            </div>
+            <div>
+              <h3 className="text-base font-bold text-blue-700">试用期个性化培养</h3>
+              <p className="text-sm text-blue-400">AI辅助 · 动态跟踪</p>
+            </div>
+          </div>
+
+          <div className="space-y-3 flex-1">
+            <div className="grid grid-cols-2 gap-2">
+              {['AI生成培养计划', '30/60/90天目标', '成长实时追踪', '风险预警提醒'].map((t, i) => (
                 <div key={i} className="flex items-center gap-1.5 text-sm text-blue-700 bg-white rounded-lg px-2.5 py-2">
                   <Zap className="w-3.5 h-3.5 text-blue-400 shrink-0" />{t}
                 </div>
@@ -1889,8 +1979,8 @@ function SlideTrainingGrowth() {
               <p className="text-sm font-semibold text-foreground mb-1">AI智能提醒</p>
               <div className="space-y-1">
                 {[
-                  '✅ 第30天：完成基础培训，融入评估达标',
-                  '⚠️ 第45天：代码贡献低于同期，建议加强指导',
+                  '✅ 第30天：基础培训完成，融入评估达标',
+                  '⚠️ 第45天：产出低于预期，建议加强指导',
                   '📊 第60天：中期评估报告自动生成',
                 ].map((t, i) => (
                   <p key={i} className="text-[12px] text-blue-600/80">{t}</p>
@@ -1900,34 +1990,34 @@ function SlideTrainingGrowth() {
           </div>
 
           <div className="mt-3 grid grid-cols-2 gap-2">
-            <div className="p-2.5 rounded-lg bg-amber-50 border border-amber-100 flex items-center justify-center gap-2">
+            <div className="p-2 rounded-lg bg-amber-50 border border-amber-100 flex items-center justify-center gap-1.5">
               <Target className="w-4 h-4 text-amber-600" />
               <span className="text-sm font-bold text-amber-700">试用期通过率</span>
               <TrendingUp className="w-4 h-4 text-amber-500" />
             </div>
-            <div className="p-2.5 rounded-lg bg-green-50 border border-green-100 flex items-center justify-center gap-2">
+            <div className="p-2 rounded-lg bg-green-50 border border-green-100 flex items-center justify-center gap-1.5">
               <Clock className="w-4 h-4 text-green-600" />
-              <span className="text-sm font-bold text-green-700">融入周期</span>
+              <span className="text-sm font-bold text-green-700">胜任周期</span>
               <TrendingDown className="w-4 h-4 text-green-500" />
             </div>
           </div>
         </div>
 
-        {/* 新员工培训 */}
-        <div className="rounded-xl border border-indigo-100 bg-indigo-50/30 p-5 flex flex-col">
+        {/* 千人千面智能培训 */}
+        <div className="rounded-xl border-2 border-indigo-200 bg-indigo-50/30 p-5 flex flex-col">
           <div className="flex items-center gap-3 mb-4">
-            <div className="w-15 h-15 rounded-xl bg-indigo-100 flex items-center justify-center">
-              <GraduationCap className="w-8 h-8 text-indigo-600" />
+            <div className="w-14 h-14 rounded-xl bg-indigo-100 flex items-center justify-center">
+              <GraduationCap className="w-7 h-7 text-indigo-600" />
             </div>
             <div>
-              <h3 className="text-base font-bold text-indigo-700">AI培训推荐</h3>
-              <p className="text-sm text-indigo-400">AI主导 · 个性化学习</p>
+              <h3 className="text-base font-bold text-indigo-700">千人千面智能培训</h3>
+              <p className="text-sm text-indigo-400">AI主导 · 个性化推荐</p>
             </div>
           </div>
 
           <div className="space-y-3 flex-1">
             <div className="grid grid-cols-2 gap-2">
-              {['能力短板诊断', '个性化学习路径', '学习效果评估', '学习伙伴匹配'].map((t, i) => (
+              {['智能课程推荐', '个性化学习路径', '学习伙伴匹配', '场景模拟训练'].map((t, i) => (
                 <div key={i} className="flex items-center gap-1.5 text-sm text-indigo-700 bg-white rounded-lg px-2.5 py-2">
                   <Zap className="w-3.5 h-3.5 text-indigo-400 shrink-0" />{t}
                 </div>
@@ -1955,18 +2045,18 @@ function SlideTrainingGrowth() {
             <div className="p-3 rounded-lg bg-white border border-indigo-100">
               <p className="text-sm font-semibold text-foreground mb-1">AI学习伙伴</p>
               <p className="text-[12px] text-indigo-600/80 leading-relaxed">
-                根据新员工的能力画像和学习风格，AI自动匹配团队中最合适的学习伙伴/导师，加速知识传递。
+                根据员工能力画像和学习风格，AI自动匹配最合适的学习伙伴/导师，加速知识传递与技能成长。
               </p>
             </div>
           </div>
 
           <div className="mt-3 grid grid-cols-2 gap-2">
-            <div className="p-2.5 rounded-lg bg-amber-50 border border-amber-100 flex items-center justify-center gap-2">
+            <div className="p-2 rounded-lg bg-amber-50 border border-amber-100 flex items-center justify-center gap-1.5">
               <GraduationCap className="w-4 h-4 text-amber-600" />
               <span className="text-sm font-bold text-amber-700">课程匹配度</span>
               <TrendingUp className="w-4 h-4 text-amber-500" />
             </div>
-            <div className="p-2.5 rounded-lg bg-green-50 border border-green-100 flex items-center justify-center gap-2">
+            <div className="p-2 rounded-lg bg-green-50 border border-green-100 flex items-center justify-center gap-1.5">
               <Zap className="w-4 h-4 text-green-600" />
               <span className="text-sm font-bold text-green-700">上手速度</span>
               <TrendingUp className="w-4 h-4 text-green-500" />
@@ -1992,8 +2082,8 @@ function SlideSummary() {
       <div className="relative z-10 flex-1 flex flex-col items-center justify-center px-16">
         <h2 className="text-3xl font-bold text-white mb-8">总结与展望</h2>
 
-        {/* 两部分核心价值 */}
-        <div className="grid grid-cols-2 gap-6 mb-10 w-full max-w-3xl">
+        {/* 三部分核心价值 */}
+        <div className="grid grid-cols-3 gap-5 mb-10 w-full max-w-4xl">
           <div className="rounded-2xl bg-white/10 backdrop-blur-sm border border-white/20 p-5 text-center">
             <p className="text-xs text-white/60 mb-1">Part I</p>
             <h3 className="text-lg font-bold text-white mb-3">AI战略支撑</h3>
@@ -2015,9 +2105,25 @@ function SlideSummary() {
             <h3 className="text-lg font-bold text-white mb-3">AI招聘提质增效</h3>
             <div className="space-y-2">
               {[
-                { icon: <Zap className="w-4 h-4" />, text: '14环节全流程AI赋能' },
+                { icon: <Zap className="w-4 h-4" />, text: '12环节全流程AI赋能' },
                 { icon: <Users className="w-4 h-4" />, text: 'AI+HR三级协作模式' },
                 { icon: <TrendingUp className="w-4 h-4" />, text: '招聘周期缩短' },
+              ].map((item, i) => (
+                <div key={i} className="flex items-center gap-2 justify-center text-sm text-white/80">
+                  {item.icon}<span>{item.text}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="rounded-2xl bg-white/10 backdrop-blur-sm border border-white/20 p-5 text-center">
+            <p className="text-xs text-white/60 mb-1">Part III</p>
+            <h3 className="text-lg font-bold text-white mb-3">AI新员工融入培养</h3>
+            <div className="space-y-2">
+              {[
+                { icon: <UserCheck className="w-4 h-4" />, text: '智能入职引导 · 0等待融入' },
+                { icon: <Target className="w-4 h-4" />, text: '试用期个性化培养计划' },
+                { icon: <GraduationCap className="w-4 h-4" />, text: 'AI智能培训 · 千人千面' },
               ].map((item, i) => (
                 <div key={i} className="flex items-center gap-2 justify-center text-sm text-white/80">
                   {item.icon}<span>{item.text}</span>
